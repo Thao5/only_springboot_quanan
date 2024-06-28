@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="../layout/header :: html_head"/>
+    <body style="min-height: 100vh;
+    display: flex;
+    flex-direction: column;">
+        <div th:replace="../layout/header :: html_nav"/>
+
+        <section class="container" th:with="action='/quanan/admin/addorupdatechinhanh'">
+            <form method="post" th:action="${action}" th:object="${cns}" enctype="multipart/form-data">
+                <input type="hidden" name="id" th:value="*{id}"/>
+                <input type="hidden" name="createdDate" th:value="*{createdDate}"/>
+                <input type="hidden" name="image" th:value="*{image}"/>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" id="diaChi" class="form-control" name="diaChi" th:value="*{diaChi}" placeholder="Nhập địa chỉ" required/>
+                    <label for="diaChi">Địa chỉ</label>
+                    <p th:if="${#fields.hasErrors('diaChi')}" th:errorclass="text-danger" th:errors="*{diaChi}" />
+                </div>
+                
+                <div class="form-floating mb-3 mt-3">
+                    <select id="idNguoiDung" name="idNguoiDung" th:field="*{idNguoiDung}" class="form-select">
+                        <option th:each="nd : ${nds}" th:value="${nd.id}" th:text="${nd.lastName + ' ' + nd.firstName}"></option>
+                    </select>
+                    <label for="idNguoiDung">Chủ cửa hàng</label>
+                    <p th:if="${#fields.hasErrors('idNguoiDung')}" th:errorclass="text-danger" th:errors="*{idNguoiDung}" />
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="file" id="file" class="form-control" name="file" th:value="*{file}" placeholder="Nhập ảnh"/>
+                    <label for="file">Ảnh</label>
+                    <img th:if="${cns.image != null}" th:src="${cns.image}" width="120" />
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <button type="submit" class="btn btn-info" th:if="${cns.id != null}"> Cập nhật</button>
+                    <button type="submit" class="btn btn-info" th:if="${cns.id == null}"> Thêm</button>
+                </div>
+            </form>
+        </section>
+
+        <footer th:replace="../layout/footer :: html_footer"/>
+        <style>
+            .btn-cus-1 {
+                font-family: inherit;
+                font-size: 18px;
+                background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+                color: white;
+                padding: 0.8em 1.2em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                border-radius: 25px;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s;
+            }
+
+            .btn-cus-1:hover {
+                transform: translateY(-3px);
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .btn-cus-1:active {
+                transform: scale(0.95);
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-cus-1 span {
+                display: block;
+                margin-left: 0.4em;
+                transition: all 0.3s;
+            }
+
+            .btn-cus-1 svg {
+                width: 18px;
+                height: 18px;
+                fill: white;
+                transition: all 0.3s;
+            }
+
+            .btn-cus-1 .svg-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.2);
+                margin-right: 0.5em;
+                transition: all 0.3s;
+            }
+
+            .btn-cus-1:hover .svg-wrapper {
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .btn-cus-1:hover svg {
+                transform: rotate(45deg);
+            }
+        </style>
+    </body>
+</html>
