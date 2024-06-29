@@ -44,7 +44,7 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model, @RequestParam Map<String, String> params) {
 
-        model.addAttribute("foods", this.foodService.getThucAns());
+//        model.addAttribute("foods", this.foodService.getThucAns());
 
         return "index";
     }
