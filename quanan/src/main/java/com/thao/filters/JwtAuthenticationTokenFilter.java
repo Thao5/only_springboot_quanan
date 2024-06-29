@@ -40,7 +40,6 @@ public class JwtAuthenticationTokenFilter extends UsernamePasswordAuthentication
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         String authToken = httpRequest.getHeader(TOKEN_HEADER);
-        System.out.println("hello");
         if (jwtService.validateTokenLogin(authToken)) {
             String username = jwtService.getUsernameFromToken(authToken);
             NguoiDung user = userService.getNguoiDungByUsername(username);
