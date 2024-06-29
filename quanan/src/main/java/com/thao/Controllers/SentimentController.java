@@ -47,7 +47,7 @@ public class SentimentController {
 
     @RequestMapping(value = "/sentiment", method = {RequestMethod.POST, RequestMethod.GET})
     public String list(Model model) {
-        final String uri = "http://127.0.0.1:5000/getcountsentiment/";
+        final String uri = "https://pythonproj-sen.onrender.com/getcountsentiment/";
 
         RestTemplate restTemplate = new RestTemplate();
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();

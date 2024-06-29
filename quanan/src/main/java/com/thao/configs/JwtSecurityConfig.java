@@ -399,17 +399,17 @@ public class JwtSecurityConfig {
         })
                 //                        .requestMatchers(new AntPathRequestMatcher("/bandatchinhanh/**")).hasAnyAuthority("ADMIN")
                 .formLogin(lg -> lg.loginPage("/login").permitAll().loginProcessingUrl("/login")
-                .successForwardUrl("/"))
+                .successForwardUrl("/")).cors(Customizer.withDefaults())
                 .logout(lo -> lo.permitAll()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login"))
-                .csrf(csrf -> csrf.disable());
+                .csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults());
 //        
 //        
 //        
 //
 //        
 
-        return http.csrf(AbstractHttpConfigurer::disable).build();
+        return http.build();
     }
 
     //hasAuthority khac voi hasRole do hasRole se tu dong them ROLE_ vao dang truoc truong` role con hasAuthority thi khong
