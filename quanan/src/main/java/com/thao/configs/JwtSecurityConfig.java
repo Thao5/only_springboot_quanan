@@ -409,6 +409,11 @@ public class JwtSecurityConfig {
 //
 //        
 
+        http.authorizeHttpRequests(rmr -> {
+            rmr.requestMatchers(new AntPathRequestMatcher("/login")
+            ).permitAll();
+        });
+
         return http.csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable).build();
     }
