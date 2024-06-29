@@ -41,6 +41,7 @@ public class JwtAuthenticationTokenFilter extends UsernamePasswordAuthentication
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         String authToken = httpRequest.getHeader(TOKEN_HEADER);
         System.out.println(httpRequest.getHeaderNames());
+        System.out.println(response.getContentType());
         if (jwtService.validateTokenLogin(authToken)) {
             String username = jwtService.getUsernameFromToken(authToken);
             NguoiDung user = userService.getNguoiDungByUsername(username);

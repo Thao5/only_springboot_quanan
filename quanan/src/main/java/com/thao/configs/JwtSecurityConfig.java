@@ -43,6 +43,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -273,6 +274,11 @@ public class JwtSecurityConfig {
     public HttpFirewall defaultHttpFirewall() {
         return new DefaultHttpFirewall();
     }
+
+//    @Bean
+//    public Enumeration names() {
+//        return new NamesEnumerator(this);
+//    }
 
 //    @Bean
 //    public WebSecurityCustomizer webSecurityCustomizer() {
