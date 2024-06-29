@@ -427,7 +427,7 @@ public class JwtSecurityConfig {
             ).permitAll();
         });
 
-        return http.csrf(AbstractHttpConfigurer::disable)
+        return http.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable).build();
     }
 
