@@ -399,7 +399,7 @@ public class JwtSecurityConfig {
         })
                 //                        .requestMatchers(new AntPathRequestMatcher("/bandatchinhanh/**")).hasAnyAuthority("ADMIN")
                 .formLogin(lg -> lg.loginPage("/login").permitAll().loginProcessingUrl("/login")
-                .successForwardUrl("/")).cors(Customizer.withDefaults())
+                .successForwardUrl("/")).csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults())
                 .logout(lo -> lo.permitAll()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login"))
                 .csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults());
