@@ -409,7 +409,7 @@ public class JwtSecurityConfig {
 //
 //        
 
-        return http.build();
+        return http.csrf(AbstractHttpConfigurer::disable).build();
     }
 
     //hasAuthority khac voi hasRole do hasRole se tu dong them ROLE_ vao dang truoc truong` role con hasAuthority thi khong
