@@ -24,11 +24,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EntityScan("com.thao.pojo")
 @EnableJpaRepositories("com.thao.repository")
-@ComponentScan(basePackages = {
-    "com.thao.repository.impl",
-    "com.thao.service",
-    "com.thao.Controllers",
-    "com.thao.validation"})
+//@ComponentScan(basePackages = {
+//    "com.thao.repository.impl",
+//    "com.thao.service",
+//    "com.thao.Controllers",
+//    "com.thao.validation"})
 @SpringBootApplication(exclude = {
     org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class}
 )
