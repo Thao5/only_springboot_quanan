@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EntityScan("com.thao.pojo")
 @EnableJpaRepositories("com.thao.repository")
-@ComponentScan({
+@ComponentScan(basePackages = {
     "com.thao.repository.impl",
     "com.thao.service",
     "com.thao.Controllers",
