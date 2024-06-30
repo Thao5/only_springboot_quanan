@@ -60,6 +60,7 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtDecoders;
 import org.springframework.security.web.firewall.DefaultHttpFirewall;
 import org.springframework.security.web.firewall.HttpFirewall;
+import org.springframework.security.web.util.matcher.OrRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -243,6 +244,10 @@ public class JwtSecurityConfig {
     @Bean
     public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter() throws Exception {
         JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter = new JwtAuthenticationTokenFilter();
+        jwtAuthenticationTokenFilter.setRequiresAuthenticationRequestMatcher(new OrRequestMatcher(
+                new AntPathRequestMatcher("/login/**", "POST")
+//                 new AntPathRequestMatcher("/user/register")
+        ));
         jwtAuthenticationTokenFilter.setAuthenticationManager(authenticationManager());
         return jwtAuthenticationTokenFilter;
     }
