@@ -432,7 +432,7 @@ public class JwtSecurityConfig {
                     .requestMatchers(new AntPathRequestMatcher("/")).authenticated();
         })
                 //                        .requestMatchers(new AntPathRequestMatcher("/bandatchinhanh/**")).hasAnyAuthority("ADMIN")
-                .formLogin(lg -> lg.loginPage("/login").permitAll().loginProcessingUrl("/login")
+                .formLogin(lg -> lg.loginPage("/admin/login").permitAll().loginProcessingUrl("/login")
                 .successForwardUrl("/")).csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults())
                 .logout(lo -> lo.permitAll()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login"))

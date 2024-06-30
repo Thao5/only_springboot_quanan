@@ -51,9 +51,9 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/login")
-    @PostMapping("/login")
-    @ResponseBody
+    @GetMapping("/admin/login")
+    @PostMapping("/admin/login")
+//    @ResponseBody
 //    @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     public String login() {
         System.out.println("login");
