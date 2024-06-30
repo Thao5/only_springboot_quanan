@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Thao
  */
 @Controller
-@ControllerAdvice
+//@ControllerAdvice
 //@PropertySource("classpath:configs.properties")
 public class IndexController {
 
@@ -36,11 +36,11 @@ public class IndexController {
     @Autowired
     private FoodService foodService;
 
-    @ModelAttribute
-    public void commonAttr(Model model, @RequestParam Map<String, String> params) {
-//        model.addAttribute("catestores", this.catestoreService.getLoaiChiNhanhs());
-        model.addAttribute("stores", this.storeService.getChiNhanhs());
-    }
+//    @ModelAttribute
+//    public void commonAttr(Model model, @RequestParam Map<String, String> params) {
+////        model.addAttribute("catestores", this.catestoreService.getLoaiChiNhanhs());
+//        model.addAttribute("stores", this.storeService.getChiNhanhs());
+//    }
 
     @RequestMapping("/")
     public String index(Model model, @RequestParam Map<String, String> params) {
