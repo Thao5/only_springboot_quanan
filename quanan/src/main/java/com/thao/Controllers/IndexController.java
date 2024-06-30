@@ -54,6 +54,7 @@ public class IndexController {
     @PostMapping("/login")
 //    @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     public String login() {
+        System.out.println("login");
         return "login";
     }
     
