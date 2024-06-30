@@ -438,10 +438,10 @@ public class JwtSecurityConfig {
 //
 //        
 
-        http.authorizeHttpRequests(rmr -> {
-            rmr.requestMatchers(new AntPathRequestMatcher("/login")
-            ).permitAll();
-        });
+//        http.authorizeHttpRequests(rmr -> {
+//            rmr.requestMatchers(new AntPathRequestMatcher("/login")
+//            ).permitAll();
+//        });
 
         return http.csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults()).build();
     }
