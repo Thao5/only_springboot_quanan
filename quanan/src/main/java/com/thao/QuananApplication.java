@@ -1,4 +1,4 @@
-package com.thao.quanan;
+package com.thao;
 
 import com.thao.configs.JwtSecurityConfig;
 import com.thao.configs.SpringSecurityConfig;

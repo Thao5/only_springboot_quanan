@@ -1,5 +1,6 @@
 package com.thao.quanan;
 
+import com.thao.QuananApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.TestConfiguration;
