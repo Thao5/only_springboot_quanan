@@ -365,7 +365,7 @@ public class JwtSecurityConfig {
                     new AntPathRequestMatcher("/api/doimatkhau/**"),
                     new AntPathRequestMatcher("/api/current-user/"),
                     new AntPathRequestMatcher("/api/login/google/"),
-                    new AntPathRequestMatcher("/api/chinhanh/**"),
+                    new AntPathRequestMatcher("/api/chinhanh/**")
             ).permitAll();
         });
 
