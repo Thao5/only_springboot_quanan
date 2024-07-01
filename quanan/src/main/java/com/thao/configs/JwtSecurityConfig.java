@@ -364,7 +364,8 @@ public class JwtSecurityConfig {
                     new AntPathRequestMatcher("/api/dangky/"),
                     new AntPathRequestMatcher("/api/doimatkhau/**"),
                     new AntPathRequestMatcher("/api/current-user/"),
-                    new AntPathRequestMatcher("/api/login/google/")
+                    new AntPathRequestMatcher("/api/login/google/"),
+                    new AntPathRequestMatcher("/api/chinhanh/**"),
             ).permitAll();
         });
 
@@ -375,7 +376,6 @@ public class JwtSecurityConfig {
                     new AntPathRequestMatcher("/api/food/addfood/**"),
                     new AntPathRequestMatcher("/api/foodall/**"),
                     new AntPathRequestMatcher("/api/stats/**"),
-                    new AntPathRequestMatcher("/api/chinhanh/**"),
                     new AntPathRequestMatcher("/api/sentiment/**")
             ).hasAnyAuthority("ADMIN", "OWNER"); //                        .requestMatchers(new AntPathRequestMatcher("/api/**", "GET")).hasAnyAuthority("ADMIN", "OWNER", "CUSTOMER")
             //                        .requestMatchers(new AntPathRequestMatcher("/api/**", "POST")).hasAnyAuthority("ADMIN", "OWNER", "CUSTOMER")
